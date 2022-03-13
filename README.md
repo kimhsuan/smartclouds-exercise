@@ -44,3 +44,52 @@ Delete Backupfiles older than 10 days
 ```bash
 bash Basic/ctl.sh delete-mysql-backup
 ```
+
+# Plus
+- [Plus](Plus)
+
+## simple RESTful API
+
+## Build Image
+```bash
+bash Plus/docker.sh build
+```
+
+push image to harbor
+```bash
+bash Basic/docker.sh push
+```
+
+run the container
+```bash
+bash Basic/docker.sh run
+```
+## Example
+get all employees data
+```
+curl http://localhost:8080/employees
+```
+
+get an employee data by usermane
+```
+curl http://localhost:8080/employees/username1
+```
+
+add new employee
+```
+curl -X POST http://localhost:8080/employees \
+    -H "Content-Type: application/json" \
+    -d '{"id": "username4","email": "email4@email.com","mobile": "0987654324","position": {"title": "title4","department": "department4"}}'
+```
+
+update an employee's data
+```
+curl -X PATCH http://localhost:8080/employees/username3 \
+    -H "Content-Type: application/json" \
+    -d '{"id": "username3","email": "newemail3@email.com","mobile": "0987654323","position": {"title": "title3","department": "department3"}}'
+```
+
+delete an emplooyee
+```
+curl -X DELETE http://localhost:8080/employees/username4
+```

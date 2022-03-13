@@ -57,12 +57,12 @@ bash Plus/docker.sh build
 
 push image to harbor
 ```bash
-bash Basic/docker.sh push
+bash Plus/docker.sh push
 ```
 
 run the container
 ```bash
-bash Basic/docker.sh run
+bash Plus/docker.sh run
 ```
 ## Example
 get all employees data

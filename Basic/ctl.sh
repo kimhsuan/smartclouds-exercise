@@ -22,6 +22,9 @@ function push() {
 
 function start() {
   docker-compose -f ${cur_dir}/docker-compose.yml up -d
+  sleep 10
+  docker exec -it app bash -c 'cp .env.example .env'
+  docker exec -it app bash -c 'php artisan key:generate'
 }
 
 function create-mysql-backup() {
